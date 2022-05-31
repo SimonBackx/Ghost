@@ -17,6 +17,10 @@ describe('Authors Content API', function () {
         await testUtils.initFixtures('owner:post', 'users:no-owner', 'user:inactive', 'posts', 'api_keys');
     });
 
+    after(async function () {
+        await testUtils.stopGhost();
+    });
+
     afterEach(function () {
         configUtils.restore();
     });

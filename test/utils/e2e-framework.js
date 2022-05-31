@@ -123,7 +123,7 @@ const initFixtures = async (...options) => {
 
     const fixtureOps = fixtureUtils.getFixtureOps(options);
 
-    return sequence(fixtureOps);
+    return await sequence(fixtureOps);
 };
 
 const getFixture = (type, index = 0) => {

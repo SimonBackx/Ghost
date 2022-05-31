@@ -18,8 +18,8 @@ describe('Settings File API', function () {
         await localUtils.doAuth(request);
     });
 
-    after(function () {
-        return testUtils.stopGhost();
+    after(async function () {
+        await testUtils.stopGhost();
     });
 
     it('Can download routes.yaml', async function () {

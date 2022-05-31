@@ -14,6 +14,10 @@ describe('Content API key authentication', function () {
         await testUtils.initFixtures('api_keys');
     });
 
+    after(async function () {
+        await testUtils.stopGhost();
+    });
+
     it('Can not access without key', async function () {
         await request.get(localUtils.API.getApiQuery('posts/'))
             .expect('Content-Type', /json/)

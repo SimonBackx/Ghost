@@ -25,8 +25,8 @@ describe('Custom Frontend routing', function () {
         request = supertest.agent(configUtils.config.get('url'));
     });
 
-    after(function () {
-        return testUtils.stopGhost();
+    after(async function () {
+        await testUtils.stopGhost();
     });
 
     it('serve welcome post with old permalink structure', function () {
